@@ -1,0 +1,41 @@
+{
+  "name": "youtube-music-presence",
+  "version": "1.0.0",
+  "main": "./dist/main.js",
+  "license": "GPL-3.0 License",
+  "description": "A simple application that adds a YouTube Music presence to Discord.",
+  "author": {
+    "name": "Daan Hautekiet",
+    "email": "daanhautekiet@gmail.com"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "tsc",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "@types/discord-rpc": "^4.0.0",
+    "@types/node": "^17.0.14",
+    "electron": "^17.0.0",
+    "electron-builder": "^22.14.5",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "discord-rpc": "^4.0.1",
+    "socket.io": "^4.4.1"
+  },
+  "build": {
+    "appId": "com.daanhautekiet.youtube-music-presence",
+    "productName": "Youtube Music Presence",
+    "target": "NSIS",
+    "directories": {
+      "output": "build"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "./icon.ico",
+      "uninstallerIcon": "./icon.ico"
+    }
+  }
+}

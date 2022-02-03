@@ -1,0 +1,28 @@
+:root {
+  --main-bg-color: #2c2f33;
+  --main-text-color: #fff;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hidden {
+  display: none;
+}
+
+#content-port {
+  display: flex;
+  flex-direction: column;
+}
+
+#content-input {
+  display: flex;
+}
+
