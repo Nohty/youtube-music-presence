@@ -3,6 +3,7 @@ declare const API: APIType;
 interface APIType {
   getSettings(): Promise<SettingsType>;
   setSettings(settings: SettingsType): Promise<void>;
+  sendNotification(options: NotificationType): Promise<void>;
 }
 
 type SettingsType = {
@@ -18,4 +19,9 @@ type MusicInfo = {
   image: string | null;
   url: string | null;
   playing: boolean;
+};
+
+type NotificationType = {
+  body: string;
+  title: string;
 };

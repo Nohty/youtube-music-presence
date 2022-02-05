@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, Menu, Tray } from "electron";
+import { app, BrowserWindow, ipcMain, Menu, Tray, Notification } from "electron";
 import { join } from "path";
 import { Settings, SocketServer, Discord } from "./lib";
 
@@ -56,6 +56,10 @@ ipcMain.handle("API:settings:set", async (event, args) => {
   await Settings.setSettings(args);
   if (args.enabled) await SocketServer.start(args.port);
   else await SocketServer.stop();
+});
+
+ipcMain.handle("API:notification:show", async (event, { body, title }) => {
+  new Notification({ title, body, icon: "./icon.ico" }).show();
 });
 
 SocketServer.on("yt-music", async (value: MusicInfo) => {
