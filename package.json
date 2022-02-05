@@ -1,6 +1,6 @@
 {
   "name": "youtube-music-presence",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./dist/main.js",
   "license": "GPL-3.0 License",
   "description": "A simple application that adds a YouTube Music presence to Discord.",
