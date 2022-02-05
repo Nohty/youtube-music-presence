@@ -59,7 +59,7 @@ ipcMain.handle("API:settings:set", async (event, args) => {
 });
 
 ipcMain.handle("API:notification:show", async (event, { body, title }) => {
-  new Notification({ title, body, icon: "./icon.ico" }).show();
+  new Notification({ title, body, icon: join(__dirname, "../icon.png") }).show();
 });
 
 SocketServer.on("yt-music", async (value: MusicInfo) => {
